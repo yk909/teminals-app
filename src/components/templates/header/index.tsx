@@ -50,7 +50,7 @@ const Header = () => {
             await signIn("metamask", {
                 publicAddress,
                 signedNonce,
-                callbackUrl: "/",
+                callbackUrl: "/dashboard",
             });
 
             setWalletDialogOpen(false);
@@ -91,7 +91,7 @@ const Header = () => {
             // will return a promise https://next-auth.js.org/getting-started/client#using-the-redirect-false-option
             const result = await signIn('polkadot', {
                 redirect: false,
-                callbackUrl: '/',
+                callbackUrl: '/dashboard',
                 message: JSON.stringify(message),
                 name: actingAccount?.meta?.name,
                 signature,
@@ -100,7 +100,7 @@ const Header = () => {
       
             // take the user to the protected page if they are allowed
             if (result?.url) {
-                router.push('/');
+                router.push('/dashboard');
             }
 
             setIsLoading(false);
