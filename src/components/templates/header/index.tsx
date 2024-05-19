@@ -50,7 +50,7 @@ const Header = () => {
             await signIn("metamask", {
                 publicAddress,
                 signedNonce,
-                callbackUrl: "/",
+                callbackUrl: "/dashboard",
             });
 
             setWalletDialogOpen(false);
@@ -91,7 +91,7 @@ const Header = () => {
             // will return a promise https://next-auth.js.org/getting-started/client#using-the-redirect-false-option
             const result = await signIn('polkadot', {
                 redirect: false,
-                callbackUrl: '/',
+                callbackUrl: '/dashboard',
                 message: JSON.stringify(message),
                 name: actingAccount?.meta?.name,
                 signature,
@@ -100,7 +100,7 @@ const Header = () => {
       
             // take the user to the protected page if they are allowed
             if (result?.url) {
-                router.push('/');
+                router.push('/dashboard');
             }
 
             setIsLoading(false);
@@ -113,23 +113,40 @@ const Header = () => {
 
     }
 
-
+    const signOutClick = () => {
+        signOut();
+    }
 
 
     return (
         <header className="pt-[20px] z-[99] top-5 max-w-[1400px] mx-auto w-full font-sans">
             <div className=" bg-[white] text-[#272727] dark:bg-[#161d28] dark:text-[#929191] rounded-[42px] py-[5px]
                             drop-shadow-[0px_6px_6px_rgba(0,0,0,0.25)] mx-[10px] sm:mx-[20px]">
-                <div className="flex justify-between px-[20px]">
-                    <Link href="/"
-                        className="flex justify-start items-center group cursor-pointer">
-                        {/* <Image src={comLogo} className="h-[55px]  w-[60px] md:w-[75px] md:h-[80px] group-hover:hue-rotate-180 duration-300 transition-all" width={150} height={150} alt="logo" /> */}
-                        <h1 className="text-[24px] font-bold hidden sm:block">
-                            TerminalApp
-                        </h1>
-                    </Link>
+                <div className="flex justify-between px-[20px] py-4">
+                    <div className="flex justify-start items-center gap-5">
+                        <Link href="/"
+                            className="flex justify-start items-center group cursor-pointer">
+                            {/* <Image src={comLogo} className="h-[55px]  w-[60px] md:w-[75px] md:h-[80px] group-hover:hue-rotate-180 duration-300 transition-all" width={150} height={150} alt="logo" /> */}
+                            <h1 className="text-[24px] font-bold hidden sm:block">
+                                TerminalApp
+                            </h1>
+                        </Link>
+                        <Link href="/dashboard"
+                            className="flex justify-start items-center group cursor-pointer">
+                                Dashboard
+                        </Link>
+                    </div>
+
                     <div className="flex justify-center items-center">
-                        <WalletConnectButton onClick={ () => setWalletDialogOpen(true)}/>
+                        {
+                            !session ? 
+                            <WalletConnectButton onClick={ () => setWalletDialogOpen(true)}/>
+                            :
+                            <button  onClick={signOutClick}
+                                className="relative rounded-md h-[40px] w-[130px] overflow-hidden border border-pink-400 bg-white text-pink-400 shadow-2xl transition-all before:absolute before:left-0 before:top-0 before:h-full before:w-0 before:duration-500 after:absolute after:right-0 after:top-0 after:h-full after:w-0 after:duration-500 hover:text-white hover:shadow-pink-400 hover:before:w-2/4 hover:before:bg-pink-400 hover:after:w-2/4 hover:after:bg-pink-400">
+                                <span className="relative z-10">Sign Out</span>
+                            </button>
+                        }
                     </div>
                 </div>
             </div>    
