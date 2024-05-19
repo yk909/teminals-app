@@ -123,13 +123,20 @@ const Header = () => {
             <div className=" bg-[white] text-[#272727] dark:bg-[#161d28] dark:text-[#929191] rounded-[42px] py-[5px]
                             drop-shadow-[0px_6px_6px_rgba(0,0,0,0.25)] mx-[10px] sm:mx-[20px]">
                 <div className="flex justify-between px-[20px] py-4">
-                    <Link href="/"
-                        className="flex justify-start items-center group cursor-pointer">
-                        {/* <Image src={comLogo} className="h-[55px]  w-[60px] md:w-[75px] md:h-[80px] group-hover:hue-rotate-180 duration-300 transition-all" width={150} height={150} alt="logo" /> */}
-                        <h1 className="text-[24px] font-bold hidden sm:block">
-                            TerminalApp
-                        </h1>
-                    </Link>
+                    <div className="flex justify-start items-center gap-5">
+                        <Link href="/"
+                            className="flex justify-start items-center group cursor-pointer">
+                            {/* <Image src={comLogo} className="h-[55px]  w-[60px] md:w-[75px] md:h-[80px] group-hover:hue-rotate-180 duration-300 transition-all" width={150} height={150} alt="logo" /> */}
+                            <h1 className="text-[24px] font-bold hidden sm:block">
+                                TerminalApp
+                            </h1>
+                        </Link>
+                        <Link href="/dashboard"
+                            className="flex justify-start items-center group cursor-pointer">
+                                Dashboard
+                        </Link>
+                    </div>
+
                     <div className="flex justify-center items-center">
                         {
                             !session ? 

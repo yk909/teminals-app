@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <footer className="bg-custom-black p-[40px] md:p-[60px] lg:p-[100px]">
             <div className="flex justify-center items-center">
-                <h2 className="text-[24px] font-bold">TermialApp</h2>
+                <h2 className="text-[24px] font-bold">TerminalApp</h2>
             </div>
         </footer>
     )
