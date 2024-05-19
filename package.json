@@ -9,18 +9,32 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@polkadot/api": "^11.0.3",
+    "@polkadot/api-augment": "^11.0.3",
+    "@polkadot/extension-dapp": "^0.47.4",
+    "@prisma/client": "^5.14.0",
+    "@reduxjs/toolkit": "^2.2.5",
+    "@types/redux-logger": "^3.0.13",
+    "@vercel/analytics": "^1.2.2",
+    "antd": "^5.17.2",
+    "axios": "^1.6.8",
+    "cookies-next": "^4.1.1",
+    "ethers": "^6.12.1",
+    "next": "14.2.3",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "react-redux": "^9.1.2",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "typescript": "^5"
   }
 }
