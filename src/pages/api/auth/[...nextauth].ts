@@ -8,6 +8,7 @@ import {
   cryptoWaitReady,
 } from "@polkadot/util-crypto";
 import { ApiPromise, WsProvider } from "@polkadot/api";
+import { prisma } from '@/lib/prisma';
 
 
 async function authorizeWithMetamask(
