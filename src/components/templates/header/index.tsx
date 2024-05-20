@@ -118,7 +118,7 @@ const Header = () => {
 
     return (
         <header className="pt-[20px] z-[99] top-5 max-w-[1400px] mx-auto w-full font-sans">
-            <div className=" bg-[white] text-[#272727] dark:bg-[#161d28] dark:text-[#929191] rounded-[42px] py-[5px]
+            <div className=" bg-[white] text-[#272727] dark:bg-[#161d28] dark:text-[#929191] rounded-md py-[5px]
                             drop-shadow-[0px_6px_6px_rgba(0,0,0,0.25)] mx-[10px] sm:mx-[20px]">
                 <div className="flex justify-between px-[20px] py-4">
                     <div className="flex justify-start items-center gap-5">
