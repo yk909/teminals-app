@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react"
 import Link from "next/link"
 import { BN } from '@polkadot/util';
 import Dashboard from "@/components/organisms/dashboard";
-
+import Layout from "@/components/templates";
 
 export default function Admin( { freeBalance } : { freeBalance : BN } ) : JSX.Element {
   const { data:session, status } = useSession({
@@ -28,7 +28,9 @@ export default function Admin( { freeBalance } : { freeBalance : BN } ) : JSX.El
 
   return (
     <main className="relative">
-      <Dashboard/>
+      <Layout>
+        <Dashboard/>
+      </Layout>
     </main>
   )
 }
