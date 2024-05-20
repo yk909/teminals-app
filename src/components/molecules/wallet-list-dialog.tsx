@@ -18,14 +18,14 @@ const WalletListDialog = ({ open, onClose, onClickMetamaskLogin, onClickPolkadot
 
     return(
         <Modal isVisible={open} onClose={onClose} closable={false} className="p-5" footer={<></>} >
-            <h3 className="text-xl font-bold text-black">Select Wallet</h3>
+            <h3 className="text-xl font-bold text-gray-700">Select Wallet</h3>
             <div className="mt-3 space-y-3 ">
                 {         
                     window.ethereum ?           
                     <div onClick={onClickMetamaskLogin} 
                         className="border-[2px] rounded-sm px-5 py-3 flex justify-center items-center gap-x-3 cursor-pointer hover:border-pink-400 transition-all duration-300">
                         <Image src={metamaskImage} alt="Metamask" width={150} height={150} className="w-[50px] h-[50px]" />
-                        <span className="text-lg font-medium text-black">
+                        <span className="text-lg font-medium text-gray-700">
                             Metamask
                         </span>
                     </div>
@@ -33,7 +33,7 @@ const WalletListDialog = ({ open, onClose, onClickMetamaskLogin, onClickPolkadot
                     <a href="https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
                         className="border-[2px] rounded-sm px-5 py-3 flex justify-center items-center gap-x-3 cursor-pointer hover:border-pink-400 transition-all duration-300">
                         <Image src={metamaskImage} alt="Metamask" width={150} height={150} className="w-[50px] h-[50px]" />
-                        <span className="text-lg font-medium text-black">
+                        <span className="text-lg font-medium text-gray-700">
                             Install Metamask wallet
                         </span>
                     </a>
@@ -43,7 +43,7 @@ const WalletListDialog = ({ open, onClose, onClickMetamaskLogin, onClickPolkadot
                     <div onClick={onClickPolkadotLogin} 
                         className="border-[2px] rounded-sm px-5 py-3 flex justify-center items-center gap-x-3 cursor-pointer hover:border-pink-400 transition-all duration-300">
                         <Image src={polkadotImage} alt="Metamask" width={150} height={150} className="w-[50px] h-[50px]" />
-                        <span className="text-lg font-medium text-black">
+                        <span className="text-lg font-medium text-gray-700">
                             Polkadot
                         </span>
                     </div>
@@ -51,7 +51,7 @@ const WalletListDialog = ({ open, onClose, onClickMetamaskLogin, onClickPolkadot
                     <a href="https://chromewebstore.google.com/detail/subwallet-polkadot-wallet/onhogfjeacnfoofkfgppdlbmlmnplgbn"
                         className="border-[2px] rounded-sm px-5 py-3 flex justify-center items-center gap-x-3 cursor-pointer hover:border-pink-400 transition-all duration-300">
                         <Image src={polkadotImage} alt="Metamask" width={150} height={150} className="w-[50px] h-[50px]" />
-                        <span className="text-lg font-medium text-black">
+                        <span className="text-lg font-medium text-gray-700">
                             Install Polkadot wallet
                         </span>
                     </a>

@@ -1,6 +1,5 @@
-import NextAuth, { NextAuthOptions, User, AuthOptions, RequestInternal } from 'next-auth';
+import NextAuth, { NextAuthOptions, RequestInternal } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import axios from "axios";
 import { ethers } from "ethers";
 import {
   decodeAddress,
@@ -63,7 +62,6 @@ async function authorizeWithPolkadot(
     }
 
     if (messaageJSON.nonce !== credentials.csrfToken) {
-
       return Promise.reject(
         new Error("🚫 You shall not pass! - CSRF token mismatch")
       );
@@ -92,7 +90,7 @@ async function authorizeWithPolkadot(
     };
   } catch (e) {
     console.error("Failed to parse message:", e);
-    return Promise.reject(new Error('🚫 The gate is closed for you'));
+    return Promise.reject(new Error('Error authentication'));
   }
 }
 

@@ -26,7 +26,7 @@ const Modal: React.FC<ModalProps> = ({ className, isVisible, onClose, children, 
 
   return (
     <>
-      <div className={`fixed inset-0 z-50 flex items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] transition-all duration-500 ${showModal ? "" : "hidden"}`}>
+      <div className={`fixed inset-0 z-50 flex items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] transition-all ease-in-out duration-500 ${showModal ? "" : "hidden"}`}>
           <div className="fixed inset-0 bg-gray-600 bg-opacity-50 transition-opacity" onClick={handleClose}></div>
           <div className={`bg-[#fff] rounded-lg shadow-lg min-w-[350px] transform transition-transform `}>
             {
