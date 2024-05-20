@@ -8,7 +8,7 @@ export default async function handler(
 ) {
   // If you don't have the NEXTAUTH_SECRET environment variable set,
   // you will have to pass your secret as `secret` to `getToken`
-  const token = await getToken({ req, secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET })
+  const token = await getToken({ req, secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET! })
   if (token) {
     // Signed in
     console.log("JSON Web Token", JSON.stringify(token, null, 2))
