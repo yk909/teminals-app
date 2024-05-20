@@ -55,9 +55,6 @@ async function authorizeWithPolkadot(
     return null;
   }
 
-  // const provider = new WsProvider("wss://rpc.polkadot.io");
-  // const api = await ApiPromise.create({ provider });
-
   try {
     const messageHex = credentials.message;
     const messaageJSON = JSON.parse(messageHex);
@@ -84,13 +81,18 @@ async function authorizeWithPolkadot(
       return Promise.reject(new Error("🚫 Invalid Signature"));
     }
 
+    
+    const provider = new WsProvider("wss://kusama-rpc.polkadot.io");
+    const api = await ApiPromise.create({ provider });
+    await api.isReady;
+    
     return {
       id: credentials.address,
       address: credentials.address,
     };
   } catch (e) {
     console.error("Failed to parse message:", e);
-    return null;
+    return Promise.reject(new Error('🚫 The gate is closed for you'));
   }
 }
 
