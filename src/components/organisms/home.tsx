@@ -10,7 +10,7 @@ const Home = () => {
             </h1>
             <div className="mt-5">
                 <p className=" text-lg font-light text-center">
-                    Imagine you have a magic wand that lets you talk to computers far away as if they were right in front of you. <span className="font-bold">Terminal-App</span> is like that magic wand for adults, letting them send messages (we call them "commands") to computers that are not next to them. It's like sending a letter to a friend who lives in another city, but much, much faster!
+                    Imagine you have a magic wand that lets you talk to computers far away as if they were right in front of you. <span className="font-bold">Terminal-App</span> is like that magic wand for adults, letting them send messages (we call them &quot;commands&quot;) to computers that are not next to them. It`&lsquo;s like sending a letter to a friend who lives in another city, but much, much faster!
                 </p>
             </div>
             <div className="mt-6 flex justify-center items-center">
