@@ -11,7 +11,6 @@ import { useSession, signIn, signOut, getCsrfToken } from 'next-auth/react';
 import { usePolkadotExtensionWithContext } from '@/context/polkadotExtensionContext';
 import Loading from "../loading";
 import { useRouter } from "next/router";
-import { message } from "antd";
 import { ethers } from "ethers";
 import axios from "axios";
 
@@ -106,7 +105,6 @@ const Header = () => {
             setIsLoading(false);
           } catch (error) {
             setIsLoading(false);
-            message.error({content:String(error)})
           }
 
         setWalletDialogOpen(false);
@@ -150,7 +148,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>    
-            <WalletListDialog open={walletDialogOpen} onClickPolkadotLogin={onClickPolkadotLoginHandle} onClickMetamaskLogin={onClickMetamaskLoginHandle} />      
+            <WalletListDialog open={walletDialogOpen} onClose={ ()=> setWalletDialogOpen(false)} onClickPolkadotLogin={onClickPolkadotLoginHandle} onClickMetamaskLogin={onClickMetamaskLoginHandle} />      
             {
                 isLoading && <Loading/>
             }
