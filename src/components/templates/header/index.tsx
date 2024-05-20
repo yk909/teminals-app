@@ -20,6 +20,8 @@ declare global {
         ethereum?: any;
     }
 }
+
+const NEXT_PUBLIC_BASIC_URL = process.env.NEXT_PUBLIC_BASIC_URL!;
   
 
 const Header = () => {
@@ -29,6 +31,7 @@ const Header = () => {
     const { accounts, actingAccount, injector } = usePolkadotExtensionWithContext();
     const [isLoading, setIsLoading] = useState(false);
     const router = useRouter();
+
 
     const onClickMetamaskLoginHandle = async () => {
         setIsLoading(true);
@@ -42,8 +45,8 @@ const Header = () => {
             const signer = await provider.getSigner();
             const publicAddress = await signer.getAddress();
             
-            await axios.post('/api/new-user', {publicAddress});
-            const response = await axios.post('/api/nonce', {publicAddress});
+            await axios.post(`${NEXT_PUBLIC_BASIC_URL}/api/new-user`, {publicAddress});
+            const response = await axios.post(`${NEXT_PUBLIC_BASIC_URL}/api/nonce`, {publicAddress});
             const signedNonce = await signer.signMessage(response.data.nonce);
 
             await signIn("metamask", {
