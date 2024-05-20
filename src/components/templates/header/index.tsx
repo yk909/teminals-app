@@ -6,7 +6,7 @@ import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import comLogo from '../../../../public/commune-logo.png';
 import WalletConnectButton from "@/components/atoms/wallet-button";
-import WalletListDialog from "@/components/atoms/wallet-list-dialog";
+import WalletListDialog from "@/components/molecules/wallet-list-dialog";
 import { useSession, signIn, signOut, getCsrfToken } from 'next-auth/react';
 import { usePolkadotExtensionWithContext } from '@/context/polkadotExtensionContext';
 import Loading from "../loading";

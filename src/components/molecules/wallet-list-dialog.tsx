@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Modal from "./modal";
+import Modal from "../atoms/modal";
 import { usePolkadotExtensionWithContext } from '@/context/polkadotExtensionContext';
 import polkadotImage from '../../../public/polkadot-logo.svg';
 import metamaskImage from '../../../public/metamask-logo.webp';
@@ -34,7 +34,7 @@ const WalletListDialog = ({ open, onClose, onClickMetamaskLogin, onClickPolkadot
                         className="border-[2px] rounded-sm px-5 py-3 flex justify-center items-center gap-x-3 cursor-pointer hover:border-pink-400 transition-all duration-300">
                         <Image src={metamaskImage} alt="Metamask" width={150} height={150} className="w-[50px] h-[50px]" />
                         <span className="text-lg font-medium text-black">
-                            Metamask
+                            Install Metamask wallet
                         </span>
                     </a>
                 }
