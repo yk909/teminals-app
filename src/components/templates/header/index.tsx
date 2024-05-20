@@ -102,7 +102,7 @@ const Header = () => {
       
             // take the user to the protected page if they are allowed
             if (result?.url) {
-                router.push('/dashboard');
+                router.push(`${NEXT_PUBLIC_BASIC_URL}/dashboard`);
             }
 
             setIsLoading(false);
