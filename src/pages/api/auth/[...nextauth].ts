@@ -55,8 +55,8 @@ async function authorizeWithPolkadot(
     return null;
   }
 
-  const provider = new WsProvider("wss://kusama-rpc.polkadot.io/");
-  const api = await ApiPromise.create({ provider });
+  // const provider = new WsProvider("wss://rpc.polkadot.io");
+  // const api = await ApiPromise.create({ provider });
 
   try {
     const messageHex = credentials.message;
