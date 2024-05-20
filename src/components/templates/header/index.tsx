@@ -90,6 +90,9 @@ const Header = () => {
                 signature = data.signature;
             }
       
+            await axios.post(`${NEXT_PUBLIC_BASIC_URL}/api/new-user`, {publicAddress: actingAccount?.address});
+
+
             // will return a promise https://next-auth.js.org/getting-started/client#using-the-redirect-false-option
             const result = await signIn('polkadot', {
                 redirect: false,
