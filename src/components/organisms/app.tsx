@@ -5,7 +5,7 @@ import SSHPanel from "../molecules/ssh-panel";
 
 const tabNames = ['SSH', 'MANAGE_HOSTS', 'AI'];
 
-const Dashboard = () => {
+const App = () => {
     const [activeTab, setActiveTab] = useState(0);
 
     const changeTab = (index: number) => {
@@ -31,16 +31,6 @@ const Dashboard = () => {
                     ))}
                 </div>
                 <div className="p-4 mt-2">
-                    {/* {tabs.map((tabContent, index) => (
-                        <div
-                            key={index}
-                            className={`${
-                            index === activeTab ? 'block' : 'hidden'
-                            } transition duration-300 ease-in-out`}
-                        >
-                            {tabContent}
-                        </div>
-                    ))} */}
                     {
                         activeTab === 0 &&
                         <SSHPanel className=""/>
@@ -53,4 +43,4 @@ const Dashboard = () => {
 }
 
 
-export default Dashboard;
+export default App;
