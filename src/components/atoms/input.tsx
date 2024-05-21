@@ -16,14 +16,14 @@ export default function Input({ label, name, className, placeholder, value, setV
       <div className={`${className}`}>
             {
                 label != "" && 
-                <label htmlFor={name}>{label}</label>
+                <label htmlFor={name} className='text-2xl'>{label}</label>
             }
             <input
                 id={name}
                 value={value}
                 placeholder={placeholder}
                 onChange={e => setValue(e.target.value)}
-                className={`mt-3 w-full font-sans border-[2px] border-[#CCC] hover:border-blue-500 focus:border-blue-500 duration-300 transition-all rounded-[7px] outline-none text-gray-500 text-[16px]
+                className={`mt-3 w-full font-sans border-[2px] border-[#CCC] hover:border-blue-500 focus:border-blue-500 duration-300 transition-all rounded-[7px] outline-none text-gray-500 text-xl
                                     py-[5px] px-[10px]`}
             ></input>
       </div>

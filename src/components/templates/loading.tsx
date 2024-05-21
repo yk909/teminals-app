@@ -1,5 +1,5 @@
 import Image from "next/image"
-import comLogo from '../../../public/commune-logo.png';
+import comLogo from '../../../public/commune-logo.svg';
 
 const Loading = () => {
     return (

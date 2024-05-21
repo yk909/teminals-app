@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSession } from "next-auth/react"
 import Link from "next/link"
 import { BN } from '@polkadot/util';
-import Dashboard from "@/components/organisms/dashboard";
+import App from "@/components/organisms/app";
 import Layout from "@/components/templates";
 
 export default function Admin( { freeBalance } : { freeBalance : BN } ) : JSX.Element {
@@ -17,9 +17,9 @@ export default function Admin( { freeBalance } : { freeBalance : BN } ) : JSX.El
     return (
       <main className="flex justify-center items-center h-screen">
         <div>
-          <p className="font-medium text-2xl">You have to login.</p>
+          <p className="font-medium text-4xl">You have to login.</p>
           <div className="mt-3 text-center">
-            <Link href="/" className="underline">Go back</Link>
+            <Link href="/" className="underline text-2xl">Go back</Link>
           </div>
         </div>
       </main>
@@ -29,7 +29,7 @@ export default function Admin( { freeBalance } : { freeBalance : BN } ) : JSX.El
   return (
     <main className="relative">
       <Layout>
-        <Dashboard/>
+        <App/>
       </Layout>
     </main>
   )

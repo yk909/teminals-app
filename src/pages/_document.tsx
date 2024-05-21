@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body>
+      <body className="relative h-full animate-fade-in-up bg-black bg-[url('/pattern.svg')]">
         <Main />
         <NextScript />
       </body>
