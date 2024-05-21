@@ -14,7 +14,7 @@ const App = () => {
 
     return (
         <div className="max-w-5xl mx-auto">
-            <Card className="bg-[#212a38] p-6">
+            <Card className="bg-black/30 p-6">
                 <div className="flex justify-center">
                     {tabNames.map((tab, index) => (
                         <button
@@ -24,7 +24,7 @@ const App = () => {
                             index === activeTab
                                 ? 'border-b-2 border-blue-500 text-blue-500'
                                 : 'text-white border-b-2'
-                            } py-2 px-4 focus:outline-none transition duration-300 ease-in-out`}
+                            } text-lg md:text-2xl font-medium py-2 px-4 focus:outline-none transition duration-300 ease-in-out`}
                         >
                             {tab}
                         </button>
@@ -36,7 +36,6 @@ const App = () => {
                         <SSHPanel className=""/>
                     }
                 </div>
-
             </Card>
         </div>
     )

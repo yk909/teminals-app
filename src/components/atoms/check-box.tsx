@@ -20,11 +20,11 @@ export default function CheckBox({ className, id, label, name, value, onChange }
                 id={id}
                 checked={value}
                 onChange={() => onChange(value)}
-                className='accent-primary-black-bg cursor-pointer'
+                className='accent-primary-black-bg cursor-pointer transform scale-150'
             />
             {
                 label != "" && 
-                <label htmlFor={id} className='ml-[5px]  cursor-pointer'>
+                <label htmlFor={id} className='ml-[5px] text-xl cursor-pointer'>
                     {label}
                 </label>
             }
