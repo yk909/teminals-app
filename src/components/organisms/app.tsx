@@ -3,7 +3,7 @@ import Card from "../atoms/card";
 import { useState } from 'react';
 import SSHPanel from "../molecules/ssh-panel";
 
-const tabNames = ['SSH', 'MANAGE_HOSTS', 'AI'];
+const tabNames = ['SSH', 'MANAGE_HOSTS'];
 
 const App = () => {
     const [activeTab, setActiveTab] = useState(0);

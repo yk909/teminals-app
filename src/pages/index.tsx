@@ -1,20 +1,36 @@
-import Head from 'next/head';
-import { Inter } from 'next/font/google';
-import Layout from '@/components/templates';
-const inter = Inter({ subsets: ['latin'] });
-import HomeContent from '@/components/organisms/home';
+import { useState } from "react";
+import { useSession } from "next-auth/react"
+import Link from "next/link"
+import { BN } from '@polkadot/util';
+import App from "@/components/organisms/app";
+import Layout from "@/components/templates";
 
-export default function Home() {
+export default function Admin( { freeBalance } : { freeBalance : BN } ) : JSX.Element {
+  const { data:session, status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      console.log( 'not authenticated yet', status )
+    },
+  })
+
+  // if (status === "loading") {
+  //   return (
+  //     <main className="relative">
+  //       <Layout>
+  //         <div className="flex justify-center items-center">
+  //           <p className="font-medium text-4xl">You have to login.</p>
+  //         </div>
+  //       </Layout>
+  //     </main>
+  //   )
+  // }
+
   return (
-    <>
-      <Head>
-        <title>Terminal App</title>
-        <meta name="description" content="Commune Terminal App" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+    <main className="relative">
       <Layout>
-          <HomeContent/>
+        <App/>
       </Layout>
-    </>
-  );
+    </main>
+  )
 }
+

@@ -138,7 +138,6 @@ const Header = () => {
                     </div>
 
                     <div className="flex justify-center items-center gap-3 md:gap-6">
-                        <Button label="App" className="w-[60px] md:w-[80px]" onClick={ () => router.push('/app')}/>
                         {
                             !session ? 
                             <Button label="Wallet Connect" className="w-[130px]" onClick={ () => setWalletDialogOpen(true)}/>
