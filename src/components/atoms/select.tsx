@@ -2,30 +2,35 @@
 
 import { useState } from 'react';
 
-type InputType = {
+type SelectType = {
     label?: string;
     name: string;
     className?: string;
-    placeholder?: string;
     value: string;
+    valueItems: string[];
     setValue: (val: string) => void
 }
 
-export default function Input({ label, name, className, placeholder, value, setValue }: InputType) {
+export default function Select({ label, name, className, value, valueItems, setValue }: SelectType) {
    return (
       <div className={`${className}`}>
             {
                 label != "" && 
                 <label htmlFor={name} className='text-lg'>{label}</label>
             }
-            <input
+            <select
                 id={name}
                 value={value}
-                placeholder={placeholder}
                 onChange={e => setValue(e.target.value)}
                 className={`mt-3 w-full font-sans border-[2px] border-[#CCC] hover:border-blue-500 focus:border-blue-500 duration-300 transition-all rounded-[7px] outline-none text-gray-500 text-xl
                                     py-[5px] px-[10px]`}
-            ></input>
+            >
+                {
+                    valueItems.map((item, index) => (
+                        <option key={index} value={item}>{item}</option>
+                    ))
+                }
+            </select>
       </div>
    );
 }

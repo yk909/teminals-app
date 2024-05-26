@@ -24,7 +24,7 @@ export default function CheckBox({ className, id, label, name, value, onChange }
             />
             {
                 label != "" && 
-                <label htmlFor={id} className='ml-[5px] text-xl cursor-pointer'>
+                <label htmlFor={id} className='ml-[5px] text-lg cursor-pointer'>
                     {label}
                 </label>
             }

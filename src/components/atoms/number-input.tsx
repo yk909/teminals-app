@@ -22,7 +22,7 @@ const NumberInput: React.FC<Props> = ({className, name, label, value, setValue }
     <div className={className} >
       {
         label != "" && 
-        <label htmlFor={name} className='text-xl'>{label}</label>
+        <label htmlFor={name} className='text-lg'>{label}</label>
       }
       <div id={name} className="mt-3 w-full flex justify-between items-center gap-x-1 bg-white border-2 border-gray-200  hover:border-blue-500 duration-300 transition-all rounded-[7px]">
         <div className="grow py-[5px] px-[10px]">
