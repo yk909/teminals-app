@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 type InputType = {
     label?: string;
+    type?: string;
     name: string;
     className?: string;
     placeholder?: string;
@@ -11,7 +12,7 @@ type InputType = {
     setValue: (val: string) => void
 }
 
-export default function Input({ label, name, className, placeholder, value, setValue }: InputType) {
+export default function Input({ label, type='text', name, className, placeholder, value, setValue }: InputType) {
    return (
       <div className={`${className}`}>
             {
@@ -20,6 +21,7 @@ export default function Input({ label, name, className, placeholder, value, setV
             }
             <input
                 id={name}
+                type={type}
                 value={value}
                 placeholder={placeholder}
                 onChange={e => setValue(e.target.value)}
