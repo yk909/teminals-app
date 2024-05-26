@@ -13,7 +13,7 @@ const Accordion: React.FC<AccordionProps> = ({ label, children }) => {
   };
 
   return (
-    <div className="rounded-lg border-2 border-blue-500 p-4">
+    <div className="rounded-lg border-2 border-blue-500 px-4 py-2">
         <div className='flex justify-between items-center'>
             {
                 label

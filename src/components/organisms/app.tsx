@@ -2,6 +2,7 @@ import Image from "next/image";
 import Card from "../atoms/card";
 import { useState } from 'react';
 import SSHPanel from "../molecules/ssh-panel";
+import ManageHosts from "../molecules/manage-hosts";
 
 const tabNames = ['SSH', 'MANAGE_HOSTS'];
 
@@ -34,6 +35,10 @@ const App = () => {
                     {
                         activeTab === 0 &&
                         <SSHPanel className=""/>
+                    }
+                    {
+                        activeTab === 1 &&
+                        <ManageHosts className=""/>
                     }
                 </div>
             </Card>
